@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Speed Reader App</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>-->
+    </head>
+    <body>
+       <!--page1-->
+        <div data-role="page" id="page1"  data-theme="a">
+            <div data-role="header">
+            </div>
+            <div role="main" class="ui-content">
+                <!--title-->
+                <h1>Speed Reader App</h1>
+                <p>For an efficient reading experience.</p>
+                 
+                <div id="control">
+                <!--font size and speed-->
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <div>FONT SIZE <span id="fontsize">50</span> px.</div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div><span id="speed">300</span> WORDS PER MINUTE.</div>
+                    </div>
+                </div>
+                
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <form class="full-width-slider">
+                        <label for="fontSizeSlider" class="ui-hidden-accessible">Slider:</label>
+                        <input type="range" name="fontSizeSlider" id="fontSizeSlider" min="20" max="100" value="50" step="5" data-highlight="true">
+                        </form>
+                    </div>
+                    <div class="ui-block-b">
+                        <form class="full-width-slider">
+                        <label for="speedSlider" class="ui-hidden-accessible">Slider:</label>
+                        <input type="range" name="speedSlider" id="speedSlider" min="50" max="600" value="300" step="50" data-highlight="true">
+                        </form>
+                    </div>
+                </div>
+                
+                <!--progress-->
+                <form class="full-width-slider">
+                <label for="progressSlider">Progress : <span id="percentage">100</span>%</label>
+                <input type="range" name="progressSlider" id="progressSlider" min="0" max="100" value="0" data-highlight="true">
+                </form>
+               </div>
+                    
+                <!--The read word-->
+                <div id="results">Word</div>
+                <!--error Message-->
+                <div id="error">
+                    Please paste text inside the box
+                </div>
+                
+                <!--user Input-->
+                <div id="input">
+                    <!--text input-->
+                    <textarea id="userInput"></textarea>
+                    
+                    <!--buttons-->
+                    <button id="start">Start Reading</button>
+                    
+                    <button id="new">New</button>
+                    <button id="pause">Pause</button>
+                    <button id="resume">Resume</button>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#page1" data-transition="pop" class="ui-btn-active ui-state-persist" data-icon="home">HOME</a>
+                        </li>
+                        
+                        <li><a href="#page2" data-transition="pop" data-icon="info">About</a>
+                        </li>
+                        
+                        <li><a href="#page3" data-transition="pop" data-icon="mail">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!--page2-->
+        <div data-role="page" id="page2" data-theme="a">
+            <div data-role="header">
+               
+            </div>
+            <div role="main" class="ui-content">
+                <ul data-role="listview" data-filter="true">
+                    <li data-role="list-divider">Main Information</li>
+                    
+                    <li><a href="#"><img src="imgM.png" class="ui-li-icon">OverProtifolio</a></li>
+                    <li><a href="#"><img src="imgM.png" class="ui-li-icon">OverProtifolio</a></li>
+                    
+                    <li data-role="list-divider">Branches</li>
+                    
+                    <li>
+                        <a href="#">
+                            <img src="imgM.png">
+                            <h1>London</h1>
+                            <p>Sales and Marketing tEam</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="imgM.png">
+                            <h1>BedFord</h1>
+                            <p>Development Team</p>
+                        </a>
+                    </li>
+                    
+                    <li data-role="list-divider">Achievements</li>
+                    
+                    <li><a href="#">OverProtifolio</a></li>
+                    <li><a href="#">OverProtifolio</a></li>
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#page1" data-transition="pop" data-icon="home">HOME</a>
+                        </li>
+                        
+                        <li><a href="#page2" data-transition="flip" class="ui-btn-active ui-state-persist" data-icon="info">About</a>
+                        </li>
+                        
+                        <li><a href="#page3" data-transition="pop" data-icon="mail">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!--page3-->
+        <div data-role="page" id="page3" data-theme="a">
+            <div data-role="header">
+                 
+            </div>
+            <div role="main" class="ui-content">
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                        <a href="#" data-role="button">Email</a>
+                        <p>Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text </p>
+                    </div>
+                    
+                    <div class="ui-block-b">
+                        <a href="#" data-role="button">Live Chat</a>
+                        <p>Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text </p>
+                    </div>
+                    
+                    <div class="ui-block-c">
+                        <a href="#" data-role="button">Phone</a>
+                        <p>Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text Some Text </p>
+                    </div>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+               <div data-role="navbar">
+                    <ul>
+                        <li><a href="#page1" data-transition="pop" data-icon="home">HOME</a>
+                        </li>
+                        
+                        <li><a href="#page2" data-transition="slide" data-icon="info">About</a>
+                        </li>
+                        
+                        <li><a href="#page3" data-transition="pop" class="ui-btn-active ui-state-persist" data-icon="mail">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="action.js">
+            
+        </script>
+    </body>
+</html>
+
+<!--https://wordreaderapplication.netlify.app/-->
